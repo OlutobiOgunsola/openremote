@@ -36,7 +36,6 @@ class AuthController {
 
         this.signinController = (req, res) => {
             let email = req.params.email;
-            console.log(email);
             if (!email) {
                 res.status(RESPONSE_CODES.BAD_REQUEST).json({
                     ...RESPONSE.FAILURE,

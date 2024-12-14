@@ -16,12 +16,9 @@ class MessagesModel {
 
             // notify the recipient if online
             const recipientSocketId = GetOnlineUserSocketId(message.receiver);
-            console.log("recipient socket id", recipientSocketId);
             if (recipientSocketId) {
-                console.log("emitting recipient socket id", recipientSocketId);
                 io.to(recipientSocketId).emit("newMessageEvent", message);
             }
-            console.log("messages", this._messages);
             return message;
         };
 

@@ -95,25 +95,3 @@ class UsersModel {
 
 const UserCollection = new UsersModel();
 module.exports = UserCollection;
-
-// const users = new UsersModel();
-// try {
-//     users.addUser({
-//         name: 'Tobi',
-//         email: 'tobi1',
-//         phoneNo: 123
-//     });
-//     users.addUser({
-//         name: 'Tobi2',
-//         email: 'tobi12',
-//         phoneNo: 1234
-//     });
-//     users.addUser({
-//         name: 'Tobi3',
-//         email: 'tobi123',
-//         phoneNo: 12345
-//     });
-// } catch (e) {
-//     console.log(e);
-// }
-// console.log(users.signJWT('tobi123'));
