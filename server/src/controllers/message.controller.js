@@ -63,6 +63,25 @@ class MessageController {
         };
         this.findLastMessages = (req, res) => { };
         this.findAllMessages = (req, res) => { };
+        this.readMessage = (req, res) => {
+            const { message_id } = req.params;
+
+            try {
+                let readMessage = MessageService.readMessage(message_id);
+                console.log("reading message", readMessage);
+                return res.status(RESPONSE_CODES.SUCCESS).json({
+                    ...RESPONSE.SUCCESS,
+                    data: readMessage
+                });
+            } catch (e) {
+                console.log(e);
+                return res.status(RESPONSE_CODES.SERVER_ERROR).json({
+                    ...RESPONSE.FAILURE,
+                    code: RESPONSE_CODES.SERVER_ERROR,
+                    data: e.message
+                });
+            }
+        };
     }
 }
 

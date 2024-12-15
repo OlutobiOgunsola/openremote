@@ -28,6 +28,10 @@ class MessageServiceClass {
             const allOwnMessages = allMessages.filter(message => (((message.sender === user_id) && (message.receiver === contact_id)) || ((message.sender === contact_id) && (message.receiver === user_id))));
             return allOwnMessages;
         };
+
+        this.readMessage = (message_id) => {
+            return MessageCollection.readMessage(message_id);
+        };
     }
 }
 

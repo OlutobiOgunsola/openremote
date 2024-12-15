@@ -29,6 +29,19 @@ class MessagesModel {
         this.getMessages = () => {
             return this._messages;
         };
+
+        /**
+         * Edits a message
+         * @returns Message Object
+         */
+        this.readMessage = (id) => {
+            let messageIndex = this._messages.findIndex(message => (message.id === id));
+            if (messageIndex < 0) throw new Error("Message not found");
+            let message = this._messages[messageIndex];
+            message.opened = true;
+            this._messages[messageIndex] = message;
+            return message;
+        };
     }
 }
 

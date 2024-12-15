@@ -11,7 +11,7 @@ const ROUTES = {
     GET_USERS: `/`,
     GET_USERS_SIDEBAR: `/sidebar`,
     POST_MESSAGE: `/`,
-    READ_MESSAGE: `/:message_id`,
+    READ_MESSAGE: `/read/:message_id`,
     GET_MESSAGES: `/`,
     GET_LAST_MESSAGE: '/end/:contact_id',
     GET_CONTACT_MESSAGES: '/:contact_id'
